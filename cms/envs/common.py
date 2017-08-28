@@ -1250,4 +1250,4 @@ MEDIA_URL = '/media/'
 
 ############## Settings for Enable MicroMasters Program ######################
 
-FEATURES['ENABLE_MICRO_MASTERS'] = False
+FEATURES['ENABLE_MICRO_MASTERS'] = True
