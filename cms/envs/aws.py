@@ -310,6 +310,8 @@ elif AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY:
 else:
     DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+
 DATABASES = AUTH_TOKENS['DATABASES']
 
 # The normal database user does not have enough permissions to run migrations.
