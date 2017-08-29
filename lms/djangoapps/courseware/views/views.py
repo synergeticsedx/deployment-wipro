@@ -139,6 +139,20 @@ def courses(request):
     courses_list = []
     programs_list = []
     course_discovery_meanings = getattr(settings, 'COURSE_DISCOVERY_MEANINGS', {})
+
+    category = request.GET.get('category', '')
+    if settings.FEATURES["ENABLE_MICRO_MASTERS"] and category:
+        programs = Program.objects.filter(subject__name=category)
+        return render_to_response(
+            "courseware/courses.html",
+            {
+                'courses': [],
+                'course_discovery_meanings': course_discovery_meanings,
+                'programs_list': [],
+                'programs': programs
+            }
+        )
+
     if not settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
         courses_list = get_courses(request.user)
 
@@ -156,12 +170,18 @@ def courses(request):
                                        settings.FEATURES.get("DISPLAY_PROGRAMS_ON_MARKETING_PAGES")):
         programs_list = get_programs_data(request.user)
 
+    if settings.FEATURES["ENABLE_MICRO_MASTERS"]:
+        programs = Program.objects.all()
+    else:
+        programs = []
+
     return render_to_response(
         "courseware/courses.html",
         {
             'courses': courses_list,
             'course_discovery_meanings': course_discovery_meanings,
-            'programs_list': programs_list
+            'programs_list': programs_list,
+            'programs': programs
         }
     )
 
