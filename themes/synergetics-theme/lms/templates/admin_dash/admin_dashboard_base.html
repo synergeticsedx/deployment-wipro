@@ -87,11 +87,11 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
                       <li><a href="/site-administration/student-details/">Users</a></li>
                       <li><a href="/site-administration/display-courses/">Courses</a></li>
                       % if settings.FEATURES["ENABLE_MICRO_MASTERS"]:
-                        <li><a href="${reverse('show-programs')}">Programs</a></li>
                         <li><a href="${reverse('show-subjects')}">Programs Subjects</a></li>
                         <li><a href="${reverse('show-language')}">Programs Language</a></li>
-                        <li><a href="${reverse('show-instructor')}">Programs Instructor</a></li>
                         <li><a href="${reverse('show-institution')}">Programs Institution</a></li>
+                        <li><a href="${reverse('show-instructor')}">Programs Instructor</a></li>
+                        <li><a href="${reverse('show-programs')}">Programs</a></li>
                         <li><a href="${reverse('show-signatories')}">Program Certificate Signatories</a></li>
                         <li><a href="${reverse('program-enrollment')}">Programs Enrollment</a></li>
                         <li><a href="${reverse('program-coupon-redemption')}">Programs Coupon Redemption</a></li>
