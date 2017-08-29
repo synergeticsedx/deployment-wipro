@@ -912,3 +912,5 @@ if _COUNTRIES_OVERRIDE:
 ############## Settings for Course Start Notification ######################
 
 COURSE_START_NOTIFY_DAY = ENV_TOKENS.get('COURSE_START_NOTIFY_DAY', COURSE_START_NOTIFY_DAY)
+
+FEATURES['ENABLE_SYSADMIN_DASHBOARD'] = False
