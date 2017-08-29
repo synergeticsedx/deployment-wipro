@@ -10,6 +10,12 @@
 
 <%namespace name='static' file='../static_content.html'/>
 
+<style>
+.courses-container .courses .course .course-image .cover-image img{
+    height: 160px;
+}
+</style>
+
 % if course_discovery_enabled:
 <%block name="header_extras">
   % for template_name in ["course_card", "filter_bar", "filter", "facet", "facet_option"]:
