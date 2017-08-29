@@ -36,6 +36,8 @@ def get_demographics():
 
     # Filter the users
     for user in users:
+        if not hasattr(user, 'profile'):
+            continue
         # Filter by age
         if user.profile.age == None:
             age_distribution['Unknown'] += 1
