@@ -253,7 +253,11 @@ class Program(TimeStampedModel):
     )
     subject = models.ForeignKey(Subject)
     institution = models.ForeignKey(Institution)
-    instructors = models.ManyToManyField(Instructor)
+    instructors = models.ManyToManyField(
+        Instructor,
+        null=True,
+        blank=True
+    )
     courses = models.ManyToManyField(Courses)
 
     def image_tag(self):
